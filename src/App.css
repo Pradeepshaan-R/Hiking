@@ -29,6 +29,22 @@ body {
     text-transform: uppercase;
 }
 
+.sectionThreeTitle {
+    font-family: "Roboto";
+    font-size: 50px;
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.sectionThreeTitle span {
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(0, 64, 128);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .dotIcon {
     color: transparent;
     border-radius: 50px;
@@ -38,7 +54,35 @@ body {
 .dotIconOther {
     color: rgb(57, 19, 19);
     border-radius: 50%;
-    border: 2px solid rgb(57, 19, 19)
+    border: 2px solid rgb(57, 19, 19);
 }
 
 @media screen and (max-width: 768px) {}
+
+/****** ScrollBar Customization ********/
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(23, 82, 170, 0.2);
+    background: rgba(23, 82, 170, 0.2);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 128, 255);
+    border-radius: 6px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 64, 128);
+}

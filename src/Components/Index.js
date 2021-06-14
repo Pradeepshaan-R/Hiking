@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { SliderData } from "../Data/SliderData";
+import CardSection from "./CardSection";
+import Footer from "./Footer";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import SectionFour from "./SectionFour";
 import SectionOne from "./SectionOne";
+import SectionThree from "./SectionThree";
 import SectionTwo from "./SectionTwo";
 import SideBar from "./SideBar";
 
@@ -19,6 +23,10 @@ const Index = () => {
       <Header slides={SliderData} />
       <SectionOne />
       <SectionTwo />
+      <SectionThree />
+      <CardSection />
+      <SectionFour />
+      <Footer />
     </>
   );
 };

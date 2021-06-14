@@ -80,6 +80,12 @@ const SectionImg = styled.img`
   outline: white;
   margin: 20px 0px auto 50px;
   border: 20px solid white;
+
+  @media screen and (max-width: 468px) {
+    margin: 10px;
+    border: 2px solid white;
+    padding: 0px;
+  }
 `;
 
 const SectionPara = styled.p`
@@ -88,7 +94,11 @@ const SectionPara = styled.p`
   margin-right: 30px;
 `;
 
-const SectionRight = styled.div``;
+const SectionRight = styled.div`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
 const SectionRightContent = styled.div`
   color: rgb(57, 19, 19);
