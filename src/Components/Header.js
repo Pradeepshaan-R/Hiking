@@ -67,6 +67,7 @@ export default Header;
 
 const HeaderSection = styled.section`
   height: 100vh;
+  position: absolute;
   max-height: 1100px;
   position: relative;
   overflow: hidden;
@@ -131,7 +132,7 @@ const ArrorButtons = css`
   user-select: none;
   transition: 0.2s;
   &:hover {
-    color: rgb(0, 128, 255);
+    color: white;
     transfor: scale(1.05);
   }
 `;
@@ -155,13 +156,13 @@ const NextArror = styled(MdKeyboardArrowRight)`
 
 const NumberWrapper = styled.div`
   font-family: Poppins;
-  position: fixed;
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 40px;
   font-weight: 700;
   margin: 10px;
-  top: 320px;
+  top: 0px;
   text-align: center;
   @media screen and (max-width: 768px) {
     top: 250px;

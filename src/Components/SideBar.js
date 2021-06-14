@@ -30,7 +30,7 @@ const SideBarContainer = styled.div`
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: rgba(0, 128, 255, 1);
+  background: rgb(21, 30, 30);
   display: grid;
   align-items: center;
   top: 0;
@@ -51,7 +51,10 @@ const Icon = styled.div`
 `;
 
 const CloseIcon = styled(FaTimes)`
-  color: rgb(0, 77, 77);
+  color: rgb(0, 89, 179);
+  &:hover {
+    color: white;
+  }
 `;
 
 const DropdownWrapper = styled.div``;
@@ -80,6 +83,6 @@ const DropdownLinks = styled(Link)`
   color: white;
   cursor: pointer;
   &:hover {
-    color: rgb(0, 77, 77);
+    color: rgb(0, 89, 179);
   }
 `;

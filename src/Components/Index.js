@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { SliderData } from "../Data/SliderData";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import SectionOne from "./SectionOne";
+import SectionTwo from "./SectionTwo";
 import SideBar from "./SideBar";
 
 const Index = () => {
@@ -15,6 +17,8 @@ const Index = () => {
       <NavBar toggle={toggle} />
       <SideBar isOpen={isOpen} toggle={toggle} />
       <Header slides={SliderData} />
+      <SectionOne />
+      <SectionTwo />
     </>
   );
 };

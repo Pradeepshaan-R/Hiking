@@ -2,12 +2,43 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;900&family=Roboto:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 /*
  CSS START 
 */
 
 body {
     background: url(images/Background.jpg);
+}
+
+/* SECTION 01 */
+
+.sectionOneTitle {
+    font-family: "Roboto";
+    font-size: 50px;
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.sectionOneTitle span {
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(57, 19, 19);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dotIcon {
+    color: transparent;
+    border-radius: 50px;
+    border: 2px solid rgb(57, 19, 19)
+}
+
+.dotIconOther {
+    color: rgb(57, 19, 19);
+    border-radius: 50%;
+    border: 2px solid rgb(57, 19, 19)
 }
 
 @media screen and (max-width: 768px) {}

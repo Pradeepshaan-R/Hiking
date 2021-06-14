@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled, { css } from "styled-components/macro";
@@ -8,13 +8,26 @@ import { Button } from "./Button";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
 
 const NavBar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   return (
-    <Nav>
+    <Nav scrollNav={scrollNav}>
       <Logo src={logo} alt="Logo" />
-      <MenuBars onClick={toggle} />
+      <MenuBars onClick={toggle} scrollNav={scrollNav} />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavMenuLinks to={item.link} key={index}>
+          <NavMenuLinks to={item.link} key={index} scrollNav={scrollNav}>
             {item.title}
           </NavMenuLinks>
         ))}
@@ -28,10 +41,12 @@ export default NavBar;
 // CSS (STYLED)
 const Nav = styled.nav`
   display: flex;
+  position: fixed;
+  background: ${({ scrollNav }) =>
+    scrollNav ? "rgba(255,255,255,0.9)" : "transparent"};
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 100;
-  position: fixed;
   width: 100%;
   height: 80px;
 `;
@@ -39,13 +54,17 @@ const Nav = styled.nav`
 const NavLink = css`
   font-family: Poppins;
   font-weight: 700;
-  color: rgba(0, 0, 0, 1);
+  color: black;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
   text-decoration: none;
+  &:hover {
+    color: ${({ scrollNav }) =>
+      scrollNav ? "rgba(77, 166, 255,1)" : "rgba(255,255,255,1)"};
+  }
 `;
 
 // LOGO
@@ -54,7 +73,7 @@ const Logo = styled.img`
   width: 14rem;
   height: 3.5rem;
   margin-left: 50px;
-  margin-top: 50px;
+  // margin-top: 40px;
   @media screen and (max-width: 768px) {
     margin-top: 0px;
     margin-left: 0px;
@@ -67,13 +86,13 @@ const MenuBars = styled(RiBarChartHorizontalFill)`
     display: block;
     width: 40px;
     height: 40px;
-    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
     transform: translate(-50%, 40%);
     &:hover {
-      color: rgba(0, 134, 179, 1);
+      color: ${({ scrollNav }) =>
+        scrollNav ? "rgba(77, 166, 255,1)" : "rgba(255,255,255,1)"};
     }
   }
 `;
@@ -81,8 +100,8 @@ const MenuBars = styled(RiBarChartHorizontalFill)`
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 620px;
-  margin-top: 70px;
+  margin-right: 550px;
+  margin-top: 20px;
   @media screen and (max-width: 768px) {
     display: none;
   }
